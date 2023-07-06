@@ -2,10 +2,12 @@ import {configureStore} from '@reduxjs/toolkit';
 import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux';
 import {setupListeners} from '@reduxjs/toolkit/dist/query';
 import messageReducer from './sliceReducers/MessageSlice';
+import userReducer from './sliceReducers/UserSlice';
 
 const store = configureStore({
   reducer: {
     message: messageReducer,
+    users: userReducer,
   },
   middleware: getDefaultMiddleware => getDefaultMiddleware(),
 });
