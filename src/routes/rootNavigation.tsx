@@ -26,7 +26,8 @@ const RootNavigation = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="SplashComponent">
+        // initialRouteName="SplashComponent"
+        initialRouteName="MainNavigation">
         <Stack.Screen name="SplashComponent" component={SplashComponent} />
         <Stack.Screen name="MainNavigation" component={MainNavigation} />
         <Stack.Screen name="AuthNavigation" component={AuthNavigation} />

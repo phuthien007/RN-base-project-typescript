@@ -1,5 +1,5 @@
 import Home from '../../screens/home';
-import Profile from '../../screens/profile';
+import ProfileNavigation from '../Profile';
 
 export const ROUTES = [
   {
@@ -13,7 +13,7 @@ export const ROUTES = [
   {
     icon: 'user',
     name: 'Account',
-    component: Profile,
+    component: ProfileNavigation,
     options: {
       tabBarLabel: 'Tài khoản',
     },

@@ -31,7 +31,8 @@ const TabNavigation = () => {
           paddingBottom: SIZES.padding / 2,
         },
       }}
-      initialRouteName="Dashboard">
+      // initialRouteName="Dashboard"
+      initialRouteName="Account">
       {ROUTES.map((route: any, index: number) => {
         const {name, component, options, icon} = route;
         return (

@@ -9,7 +9,8 @@ const ProfileNavigation = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+      initialRouteName="Profile">
       {ROUTES.map((route: any, index: number) => {
         const {name, component, options} = route;
         return (
