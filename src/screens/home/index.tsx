@@ -1,28 +1,135 @@
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
-import {COLORS} from '../../constants';
-import {useDispatch} from 'react-redux';
-import {RootState, useAppSelector} from '../../services/stores';
-import {setMessage} from '../../services/stores/sliceReducers/MessageSlice';
+import {COLORS, SIZES} from '../../constants';
+import HomeHeader from '../../components/Home/Header';
+import MenuItem from '../../components/Menu/MenuItem';
 
-const Home = () => {
-  const dispatch = useDispatch();
-
-  const {message} = useAppSelector((state: RootState) => state.message);
-
-  const handlePress = (msg: string) => {
-    dispatch(setMessage(msg));
-  };
-
+const Home = ({navigation}: any) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello: {message}</Text>
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => handlePress('Hello world')}>
-        <Text>Press me</Text>
-      </TouchableOpacity>
-    </View>
+    <ScrollView
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{flexGrow: 1}}>
+      {/* header  */}
+      <View
+        style={{
+          height: '20%',
+          backgroundColor: COLORS.white,
+        }}>
+        <HomeHeader />
+      </View>
+      {/* body content */}
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: COLORS.lightGray,
+          borderTopLeftRadius: 30,
+          borderTopRightRadius: 30,
+          // marginBottom: 180,
+        }}>
+        <View>
+          <View>
+            <Text
+              style={{
+                color: COLORS.black,
+                fontSize: SIZES.h3,
+                fontWeight: 'bold',
+                paddingHorizontal: SIZES.base * 2,
+                paddingTop: SIZES.base * 2,
+              }}>
+              Dành cho bạn
+            </Text>
+            <View
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                gap: SIZES.base,
+                flexWrap: 'wrap',
+                paddingTop: SIZES.base * 2,
+                paddingHorizontal: SIZES.base * 2,
+              }}>
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+            </View>
+          </View>
+        </View>
+        <View>
+          <View>
+            <Text
+              style={{
+                color: COLORS.black,
+                fontSize: SIZES.h3,
+                fontWeight: 'bold',
+                paddingHorizontal: SIZES.base * 2,
+                paddingTop: SIZES.base * 2,
+              }}>
+              Dành cho bạn
+            </Text>
+            <View
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                gap: SIZES.base,
+                flexWrap: 'wrap',
+                paddingTop: SIZES.base * 2,
+                paddingHorizontal: SIZES.base * 2,
+              }}>
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+            </View>
+          </View>
+        </View>
+        <View>
+          <View>
+            <Text
+              style={{
+                color: COLORS.black,
+                fontSize: SIZES.h3,
+                fontWeight: 'bold',
+                paddingHorizontal: SIZES.base * 2,
+                paddingTop: SIZES.base * 2,
+              }}>
+              Dành cho bạn
+            </Text>
+            <View
+              style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                gap: SIZES.base,
+                flexWrap: 'wrap',
+                paddingTop: SIZES.base * 2,
+                paddingHorizontal: SIZES.base * 2,
+              }}>
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+              <MenuItem navigation={navigation} />
+            </View>
+          </View>
+        </View>
+        <View
+          style={{
+            height: 180,
+          }}></View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -32,6 +139,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     color: COLORS.primary,
+    backgroundColor: COLORS.white,
+    marginBottom: 0,
   },
   text: {
     color: COLORS.primary,

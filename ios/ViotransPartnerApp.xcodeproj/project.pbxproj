@@ -32,6 +32,8 @@
 		6C95BD7EDC7B4630AC1BAAFE /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58B8E0A3D3774592B5B501A5 /* RobotoCondensed-Light.ttf */; };
 		5DE35CE51C78464CA4A9D527 /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC3F53EF88DF499E9CECC2CC /* RobotoCondensed-LightItalic.ttf */; };
 		2C154BA706FF4BB7A6904028 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8A70F6CC8404F9A85F736FA /* RobotoCondensed-Regular.ttf */; };
+		C428C7CAAD964E1E82A5BA1F /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076A1AD5ADC04CCF85B81A46 /* antfill.ttf */; };
+		270BC7B6313240B9BC245D2E /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DE82AC45DF645A49734C502 /* antoutline.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		58B8E0A3D3774592B5B501A5 /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; name = "RobotoCondensed-Light.ttf"; path = "../src/assets/fonts/RobotoCondensed-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		FC3F53EF88DF499E9CECC2CC /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; name = "RobotoCondensed-LightItalic.ttf"; path = "../src/assets/fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		A8A70F6CC8404F9A85F736FA /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoCondensed-Regular.ttf"; path = "../src/assets/fonts/RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		076A1AD5ADC04CCF85B81A46 /* antfill.ttf */ = {isa = PBXFileReference; name = "antfill.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9DE82AC45DF645A49734C502 /* antoutline.ttf */ = {isa = PBXFileReference; name = "antoutline.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,8 @@
 				58B8E0A3D3774592B5B501A5 /* RobotoCondensed-Light.ttf */,
 				FC3F53EF88DF499E9CECC2CC /* RobotoCondensed-LightItalic.ttf */,
 				A8A70F6CC8404F9A85F736FA /* RobotoCondensed-Regular.ttf */,
+				076A1AD5ADC04CCF85B81A46 /* antfill.ttf */,
+				9DE82AC45DF645A49734C502 /* antoutline.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -325,6 +331,8 @@
 				6C95BD7EDC7B4630AC1BAAFE /* RobotoCondensed-Light.ttf in Resources */,
 				5DE35CE51C78464CA4A9D527 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				2C154BA706FF4BB7A6904028 /* RobotoCondensed-Regular.ttf in Resources */,
+				C428C7CAAD964E1E82A5BA1F /* antfill.ttf in Resources */,
+				270BC7B6313240B9BC245D2E /* antoutline.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
