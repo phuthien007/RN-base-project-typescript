@@ -9,13 +9,16 @@ import {
   setAuthorized,
   setLoading,
 } from '../../../services/stores/sliceReducers/UserSlice';
+import {useNavigation} from '@react-navigation/native';
+import SplashComponent from '../../SplashComponent';
 
 const HomeHeader = () => {
   const dispatch = useDispatch();
   const {name} = useAppSelector((state: RootState) => state.users);
-
+  const navigation = useNavigation();
   const logoutHandle = () => {
     dispatch(setLoading(true));
+    navigation.navigate(SplashComponent);
     setTimeout(() => {
       dispatch(setAuthorized(false));
       dispatch(setLoading(false));
