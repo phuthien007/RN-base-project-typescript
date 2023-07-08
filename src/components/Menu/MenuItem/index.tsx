@@ -1,11 +1,18 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {FC} from 'react';
 import {COLORS, FONTS, icons, images} from '../../../constants';
+import {useNavigation} from '@react-navigation/native';
 
-const MenuItem = ({navigation}: any) => {
+type MenuItemProps = {
+  label?: string;
+  route?: string;
+};
+
+const MenuItem: FC<MenuItemProps> = ({label = 'Test', route = 'Test'}) => {
+  const navigation = useNavigation();
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Test')}
+      onPress={() => navigation.navigate(route)}
       style={{
         height: 100,
         width: 100,
@@ -40,7 +47,7 @@ const MenuItem = ({navigation}: any) => {
             color: COLORS.black,
             ...FONTS.body4,
           }}>
-          Trang chu
+          {label}
         </Text>
       </View>
     </TouchableOpacity>

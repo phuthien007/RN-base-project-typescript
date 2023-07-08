@@ -32,8 +32,7 @@ const TabNavigation = () => {
         },
         unmountOnBlur: true,
       }}
-      // initialRouteName="Dashboard"
-      initialRouteName="Account">
+      initialRouteName="Dashboard">
       {ROUTES.map((route: any, index: number) => {
         const {name, component, options, icon} = route;
         return (

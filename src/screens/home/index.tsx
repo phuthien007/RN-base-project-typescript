@@ -14,7 +14,7 @@ const Home = ({navigation}: any) => {
       {/* header  */}
       <View
         style={{
-          height: '20%',
+          height: 90,
           backgroundColor: COLORS.white,
         }}>
         <HomeHeader />
@@ -24,8 +24,8 @@ const Home = ({navigation}: any) => {
         style={{
           flex: 1,
           backgroundColor: COLORS.lightGray,
-          borderTopLeftRadius: 30,
-          borderTopRightRadius: 30,
+          borderTopLeftRadius: SIZES.radius * 2,
+          borderTopRightRadius: SIZES.radius * 2,
           // marginBottom: 180,
         }}>
         <View>
@@ -51,12 +51,12 @@ const Home = ({navigation}: any) => {
                 paddingTop: SIZES.base * 2,
                 paddingHorizontal: SIZES.base * 2,
               }}>
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
             </View>
           </View>
         </View>
@@ -83,12 +83,12 @@ const Home = ({navigation}: any) => {
                 paddingTop: SIZES.base * 2,
                 paddingHorizontal: SIZES.base * 2,
               }}>
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
             </View>
           </View>
         </View>
@@ -115,18 +115,18 @@ const Home = ({navigation}: any) => {
                 paddingTop: SIZES.base * 2,
                 paddingHorizontal: SIZES.base * 2,
               }}>
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
-              <MenuItem navigation={navigation} />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
+              <MenuItem />
             </View>
           </View>
         </View>
         <View
           style={{
-            height: 180,
+            height: 80,
           }}></View>
       </View>
     </ScrollView>

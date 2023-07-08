@@ -14,7 +14,7 @@ import SplashComponent from '../../SplashComponent';
 
 const HomeHeader = () => {
   const dispatch = useDispatch();
-  const {name} = useAppSelector((state: RootState) => state.users);
+  const {name, authorities} = useAppSelector((state: RootState) => state.users);
   const navigation = useNavigation();
   const logoutHandle = () => {
     dispatch(setLoading(true));
@@ -26,52 +26,93 @@ const HomeHeader = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={{flexDirection: 'row'}}>
-        {/* information account  */}
-        <View style={{flex: 0.7, flexDirection: 'row'}}>
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'row',
+        gap: 12,
+        alignItems: 'center',
+        paddingHorizontal: SIZES.base * 3,
+      }}>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: 'row',
+          gap: 12,
+          alignItems: 'center',
+        }}>
+        {/* avatar  */}
+        <View
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: 30,
+            backgroundColor: COLORS.lightGray,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <IconOutline name="user" size={30} color="black" />
+        </View>
+        {/* name  */}
+        <View
+          style={{
+            flex: 1,
+            marginLeft: 10,
+          }}>
           <View
             style={{
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              height: 50,
-              width: 50,
-              borderRadius: 50,
-              backgroundColor: COLORS.green,
-              flex: 0.2,
+              alignItems: 'flex-start',
+              marginTop: 5,
             }}>
-            <IconOutline
-              name="user"
-              size={30}
-              style={{marginTop: 8, color: COLORS.white}}
-            />
+            <Text
+              style={{
+                color: COLORS.black,
+                fontSize: SIZES.body2,
+                fontWeight: 'bold',
+              }}>
+              {name}
+            </Text>
           </View>
-          <View style={{flex: 0.8, marginLeft: 5}}>
-            <Text style={{color: COLORS.black, ...FONTS.h3}}>Xin chào</Text>
-            <Text style={{color: COLORS.black, ...FONTS.body3}}>{name}</Text>
-            <Text style={{color: COLORS.black, ...FONTS.body3}}>
-              CONG TY TRACH NHIEM HUU HAN
+          <View
+            style={{
+              alignItems: 'flex-start',
+              marginTop: 5,
+            }}>
+            <Text
+              style={{
+                color: COLORS.black,
+                fontSize: SIZES.body4,
+              }}>
+              {authorities?.map(item => item.split('_')[1]).join(', ')}
             </Text>
           </View>
         </View>
-        {/* Logout btn  */}
-        <View style={{flex: 0.3}}>
-          <Button
-            onPress={logoutHandle}
-            style={{
-              backgroundColor: COLORS.primary,
-              borderRadius: SIZES.radius,
-            }}>
-            <IconOutline
-              name="logout"
-              size={20}
-              color={COLORS.white}
-              style={{marginRight: 5}}
-            />
-            <Text style={{color: COLORS.white}}>Logout</Text>
-          </Button>
-        </View>
       </View>
+      <Button
+        style={{
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <IconOutline
+          name="logout"
+          size={30}
+          color="black"
+          onPress={logoutHandle}
+        />
+        <View
+          style={{
+            alignItems: 'center',
+            marginTop: 5,
+          }}>
+          <Text
+            style={{
+              color: COLORS.black,
+            }}>
+            Đăng xuất
+          </Text>
+        </View>
+      </Button>
     </View>
   );
 };

@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import {IconOutline} from '@ant-design/icons-react-native';
-import {COLORS} from '../../../constants';
+import {COLORS, SIZES} from '../../../constants';
 import {useAppSelector} from '../../../services/stores';
 
 const HeaderProfile = () => {
@@ -13,87 +13,56 @@ const HeaderProfile = () => {
     <View
       style={{
         flex: 1,
-        justifyContent: 'center',
+        flexDirection: 'row',
+        gap: 12,
+        alignItems: 'center',
+        paddingHorizontal: SIZES.base * 3,
       }}>
+      {/* avatar  */}
       <View
         style={{
-          flexDirection: 'row',
+          width: 60,
+          height: 60,
+          borderRadius: 30,
+          backgroundColor: COLORS.lightGray,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        {/* avatar  */}
-        <View
-          style={{
-            width: 120,
-            height: 120,
-            borderRadius: 60,
-            backgroundColor: COLORS.lightGray,
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <IconOutline name="user" size={60} color="black" />
-        </View>
+        <IconOutline name="user" size={30} color="black" />
       </View>
       {/* name  */}
       <View
         style={{
-          alignItems: 'flex-start',
-          marginTop: 10,
+          flex: 1,
+          marginLeft: 10,
         }}>
-        <Text
+        <View
           style={{
-            color: 'white',
-            fontSize: 20,
-            fontWeight: 'bold',
+            alignItems: 'flex-start',
+            marginTop: 5,
           }}>
-          Tên: {name}
-        </Text>
-      </View>
-      {/* company  */}
-      <View
-        style={{
-          alignItems: 'flex-start',
-
-          marginTop: 10,
-        }}>
-        <Text
+          <Text
+            style={{
+              color: 'white',
+              fontSize: SIZES.body2,
+              fontWeight: 'bold',
+            }}>
+            {name}
+          </Text>
+        </View>
+        <View
           style={{
-            color: 'white',
-            fontSize: 16,
-            fontWeight: 'bold',
+            alignItems: 'flex-start',
+            marginTop: 5,
           }}>
-          Email: {email}
-        </Text>
-      </View>
-      <View
-        style={{
-          alignItems: 'flex-start',
-
-          marginTop: 10,
-        }}>
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 16,
-            fontWeight: 'bold',
-          }}>
-          Công ty: {partnerName}
-        </Text>
-      </View>
-      <View
-        style={{
-          alignItems: 'flex-start',
-
-          marginTop: 10,
-        }}>
-        <Text
-          style={{
-            color: 'white',
-            fontSize: 16,
-            fontWeight: 'bold',
-          }}>
-          Vai trò: {authorities?.map(item => item.split('_')[1]).join(', ')}
-        </Text>
+          <Text
+            style={{
+              color: 'white',
+              fontSize: SIZES.body4,
+            }}>
+            {authorities?.map(item => item.split('_')[1]).join(', ')}
+          </Text>
+        </View>
       </View>
     </View>
   );
