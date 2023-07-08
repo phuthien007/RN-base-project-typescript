@@ -1,11 +1,12 @@
 import Home from '../../screens/home';
+import HomeNavigation from '../Home';
 import ProfileNavigation from '../Profile';
 
 export const ROUTES = [
   {
     icon: 'home',
-    name: 'Dashboard',
-    component: Home,
+    name: 'HomeNavigation',
+    component: HomeNavigation,
     options: {
       tabBarLabel: 'Dashboard',
     },

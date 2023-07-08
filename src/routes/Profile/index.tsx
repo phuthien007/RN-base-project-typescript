@@ -18,7 +18,9 @@ const ProfileNavigation = () => {
             key={index}
             name={name}
             component={component}
-            options={options}
+            options={{
+              ...options,
+            }}
           />
         );
       })}

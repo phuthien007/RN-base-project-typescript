@@ -4,12 +4,12 @@ import {UserState} from '../../models/Users';
 
 const initialState: UserState = {
   id: '',
-  name: '',
-  authorities: [],
-  email: '',
+  name: '1',
+  authorities: ['ROLE_ADMIN'],
+  email: 'admin@gmail.com',
   avatar: '',
   partnerId: '',
-  partnerName: '',
+  partnerName: 'CTY TNHH ABC',
   authorized: false, // false is default value
   loading: false,
 };
@@ -27,13 +27,7 @@ const userSlice = createSlice({
       state.authorized = action.payload;
     },
     setState: (state, action: PayloadAction<UserState>) => {
-      state.id = action.payload.id;
       state.name = action.payload.name;
-      state.authorities = action.payload.authorities;
-      state.email = action.payload.email;
-      state.avatar = action.payload.avatar;
-      state.partnerId = action.payload.partnerId;
-      state.partnerName = action.payload.partnerName;
     },
   },
 });

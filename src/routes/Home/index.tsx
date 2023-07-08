@@ -9,7 +9,8 @@ const HomeNavigation = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+      initialRouteName="Home">
       {ROUTES.map((route: any, index: number) => {
         const {name, component, options} = route;
         return (

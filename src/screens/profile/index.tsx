@@ -1,11 +1,27 @@
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
-import {COLORS} from '../../constants';
+import {COLORS, SIZES} from '../../constants';
 import MenuItem from '../../components/Profile/MenuItem';
-import DetailProfile from './detail-profile';
-import ChangePassword from './change-password';
+import HeaderProfile from '../../components/Profile/HeaderProfile';
+import {useDispatch} from 'react-redux';
+import {
+  setAuthorized,
+  setLoading,
+} from '../../services/stores/sliceReducers/UserSlice';
+import SplashComponent from '../../components/SplashComponent';
+import {useNavigation} from '@react-navigation/native';
 
 const Profile = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const logoutHandle = (): void => {
+    dispatch(setLoading(true));
+    navigation.navigate(SplashComponent);
+    setTimeout(() => {
+      dispatch(setAuthorized(false));
+      dispatch(setLoading(false));
+    }, 3000);
+  };
   return (
     <ScrollView
       style={styles.container}
@@ -15,9 +31,17 @@ const Profile = () => {
       {/* information toturial  */}
       <View
         style={{
-          height: 350,
-          backgroundColor: 'red',
-        }}></View>
+          height: 320,
+          borderBottomEndRadius: 24,
+          borderBottomStartRadius: 24,
+          backgroundColor: COLORS.primary,
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginBottom: SIZES.base,
+        }}>
+        {/* Toturial profile  */}
+        <HeaderProfile />
+      </View>
       {/* layout menu  */}
       <View
         style={{
@@ -26,6 +50,7 @@ const Profile = () => {
         }}>
         <MenuItem label="Thông tin chi tiết" route={'DetailProfile'} />
         <MenuItem label="Đổi mật khẩu" route={'ChangePassword'} />
+        <MenuItem onHandlePress={logoutHandle} label="Đăng xuất" disable />
       </View>
       <View
         style={{

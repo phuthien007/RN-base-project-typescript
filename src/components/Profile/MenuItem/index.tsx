@@ -5,13 +5,26 @@ import {COLORS, SIZES} from '../../../constants';
 import {IconOutline} from '@ant-design/icons-react-native';
 import {CommonActions, useNavigation} from '@react-navigation/native';
 
-const MenuItem = ({label, route}: {label: string; route: string}) => {
+type MenuItemProps = {
+  label: string;
+  route?: string;
+  disable?: boolean;
+  onHandlePress?: () => void;
+};
+const MenuItem: React.FC<MenuItemProps> = ({
+  label,
+  route,
+  disable,
+  onHandlePress,
+}) => {
   const navigation = useNavigation();
 
   const handlePress = () => {
-    navigation.dispatch({
-      ...CommonActions.navigate(route),
-    });
+    if (!disable) {
+      navigation.navigate(route);
+    } else if (onHandlePress) {
+      onHandlePress();
+    }
   };
   return (
     <View
@@ -25,8 +38,9 @@ const MenuItem = ({label, route}: {label: string; route: string}) => {
         onPress={handlePress}
         style={{
           flex: 1,
-          backgroundColor: COLORS.white,
-          borderBlockColor: COLORS.primary,
+          backgroundColor: 'transparent',
+          borderWidth: 1,
+          borderColor: COLORS.gray,
           width: '80%',
           height: 64,
           borderRadius: SIZES.radius,
