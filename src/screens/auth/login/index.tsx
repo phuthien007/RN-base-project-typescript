@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import {
+  loginThunk,
   setAuthorized,
   setLoading,
   setState,
@@ -19,6 +20,7 @@ import {UserState} from '../../../services/models/Users';
 import {useNavigation} from '@react-navigation/native';
 import SplashComponent from '../../../components/SplashComponent';
 import ForgotPassword from '../forgot-password';
+import {useAppSelector} from '../../../services/stores';
 // import Button from '@ant-design/react-native/lib/button';
 
 const Login = () => {
@@ -27,21 +29,17 @@ const Login = () => {
     username: '',
     password: '',
   });
-  const [isVisiablePassword, setIsVisiablePassword] = React.useState(false);
   const dispatch = useDispatch();
-
   const handlePress = () => {
-    dispatch(setLoading(true));
+    dispatch(
+      loginThunk({
+        // username: dataLogin.username,
+        // password: dataLogin.password,
+        username: 'taikhoancolab@gmail.com',
+        password: 'string',
+      }),
+    );
     navigation.navigate(SplashComponent);
-    setTimeout(() => {
-      dispatch(setAuthorized(true));
-      dispatch(
-        setState({
-          name: dataLogin.username,
-        }),
-      );
-      dispatch(setLoading(false));
-    }, 3000);
   };
 
   return (
