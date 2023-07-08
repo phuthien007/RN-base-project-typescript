@@ -9,6 +9,8 @@ const initialState: UserState = {
   email: 'admin@gmail.com',
   avatar: '',
   partnerId: '',
+  telephone: '0989123',
+  note: '',
   partnerName: 'CTY TNHH ABC',
   authorized: false, // false is default value
   loading: false,

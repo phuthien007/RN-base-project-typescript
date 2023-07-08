@@ -14,7 +14,7 @@ export const ROUTES = [
     name: 'DetailProfile',
     component: DetailProfile,
     options: {
-      title: 'DetailProfile',
+      title: 'Thông tin cá nhân',
       headerShown: true,
     },
   },
@@ -22,7 +22,7 @@ export const ROUTES = [
     name: 'ChangePassword',
     component: ChangePassword,
     options: {
-      title: 'ChangePassword',
+      title: 'Đổi mật khẩu',
       headerShown: true,
     },
   },

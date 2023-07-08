@@ -1,6 +1,7 @@
 import React from 'react';
 import {ROUTES} from './config';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {COLORS} from '../../constants';
 
 const Stack = createNativeStackNavigator();
 
@@ -9,6 +10,12 @@ const ProfileNavigation = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        // align header title center
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: COLORS.primary,
+        },
+        headerTintColor: '#fff',
       }}
       initialRouteName="Profile">
       {ROUTES.map((route: any, index: number) => {
