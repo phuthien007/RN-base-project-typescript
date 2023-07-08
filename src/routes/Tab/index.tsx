@@ -30,6 +30,7 @@ const TabNavigation = () => {
           fontWeight: 'bold',
           paddingBottom: SIZES.padding / 2,
         },
+        unmountOnBlur: true,
       }}
       // initialRouteName="Dashboard"
       initialRouteName="Account">
