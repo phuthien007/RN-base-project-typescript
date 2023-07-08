@@ -89,6 +89,7 @@ const HomeHeader = () => {
         </View>
       </View>
       <Button
+        onPress={logoutHandle}
         style={{
           flexDirection: 'column',
           alignItems: 'center',
