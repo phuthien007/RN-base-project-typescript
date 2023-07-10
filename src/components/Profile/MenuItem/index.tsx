@@ -38,13 +38,13 @@ const MenuItem: React.FC<MenuItemProps> = ({
         onPress={handlePress}
         style={{
           flex: 1,
-          backgroundColor: 'transparent',
-          borderWidth: 1,
-          borderColor: COLORS.gray,
-          width: '80%',
+          width: '100%',
           height: 64,
           borderRadius: SIZES.radius,
           justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: COLORS.white,
+          elevation: 1.1,
         }}>
         <View
           style={{

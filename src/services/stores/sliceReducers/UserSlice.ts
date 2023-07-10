@@ -79,11 +79,11 @@ const userSlice = createSlice({
       .addCase(getMe.fulfilled, (state, action) => {
         state.authorized = true;
         state.loading = false;
-        state = {
+        Object.assign(state, {
           ...action.payload,
           authorized: true,
           loading: false,
-        };
+        });
       })
       .addCase(getMe.rejected, (state, action) => {
         state.authorized = false;

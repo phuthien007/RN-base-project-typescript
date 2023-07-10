@@ -11,6 +11,7 @@ import {
 import SplashComponent from '../../components/SplashComponent';
 import {useNavigation} from '@react-navigation/native';
 import * as MenuItemMain from '../../components/Menu/MenuItem';
+import * as stylesGlobal from '../../styles/global';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -32,45 +33,48 @@ const Profile = () => {
       {/* information toturial  */}
       <View
         style={{
-          height: 80,
+          height: 90,
           borderBottomEndRadius: 12,
           borderBottomStartRadius: 12,
           backgroundColor: COLORS.primary,
           justifyContent: 'center',
           alignItems: 'center',
           marginBottom: SIZES.base,
+          elevation: 5,
         }}>
         {/* Toturial profile  */}
         <HeaderProfile />
       </View>
       {/* layout menu  */}
-      <View
-        style={{
-          gap: 10,
-          justifyContent: 'center',
-          flexDirection: 'row',
-          flexWrap: 'wrap',
-          // backgroundColor: 'gray',
-        }}>
-        <MenuItemMain.default label="Thong tin" route={'DetailProfile'} />
-        <MenuItemMain.default label="Quen mat khau" route={'ChangePassword'} />
-        <MenuItemMain.default label="Trang chủ" route={'Home'} />
-        <MenuItemMain.default label="Trang chủ" route={'Home'} />
-        <MenuItemMain.default label="Trang chủ" route={'Home'} />
-        <MenuItemMain.default label="Trang chủ" route={'Home'} />
+      <View style={[stylesGlobal.styles.shadow, stylesGlobal.styles.menucard]}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'row',
+            gap: SIZES.base * 2,
+            flexWrap: 'wrap',
+            paddingVertical: SIZES.base * 2,
+          }}>
+          <MenuItemMain.default label="Thong tin" route={'DetailProfile'} />
+          <MenuItemMain.default
+            label="Quen mat khau"
+            route={'ChangePassword'}
+          />
+          <MenuItemMain.default label="Trang chủ" route={'Home'} />
+          <MenuItemMain.default label="Trang chủ" route={'Home'} />
+          <MenuItemMain.default label="Trang chủ" route={'Home'} />
+          <MenuItemMain.default label="Trang chủ" route={'Home'} />
+        </View>
       </View>
+
       <View
         style={{
-          height: 1,
-          marginBottom: SIZES.base * 2,
-          backgroundColor: '#e5e5e5',
-          // marginHorizontal: SIZES.base * 3,
-          elevation: 5,
-        }}></View>
-      <View
-        style={{
-          gap: 10,
+          gap: SIZES.base,
+          paddingTop: SIZES.base * 2,
           // backgroundColor: 'gray',
+          paddingHorizontal: SIZES.base * 2,
         }}>
         <MenuItem label="Thông tin chi tiết" route={'DetailProfile'} />
         <MenuItem label="Đổi mật khẩu" route={'ChangePassword'} />

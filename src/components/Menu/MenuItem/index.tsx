@@ -1,6 +1,6 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React, {FC} from 'react';
-import {COLORS, FONTS, icons, images} from '../../../constants';
+import {COLORS, FONTS, SIZES, icons, images} from '../../../constants';
 import {useNavigation} from '@react-navigation/native';
 
 type MenuItemProps = {
@@ -16,9 +16,13 @@ const MenuItem: FC<MenuItemProps> = ({label = 'Test', route = 'Test'}) => {
       style={{
         height: 100,
         width: 100,
-        // backgroundColor: 'white',
+        backgroundColor: COLORS.primary,
+        borderRadius: SIZES.base,
         // justifyContent: 'center',
         alignItems: 'center',
+        paddingVertical: SIZES.base,
+        overflow: 'hidden',
+        opacity: 0.9,
       }}>
       <View
         style={{
@@ -26,7 +30,7 @@ const MenuItem: FC<MenuItemProps> = ({label = 'Test', route = 'Test'}) => {
           width: 60,
           // flex: 0.5,
           borderRadius: 60,
-          backgroundColor: COLORS.green,
+          backgroundColor: COLORS.white,
           justifyContent: 'center',
           alignItems: 'center',
         }}>
@@ -35,7 +39,7 @@ const MenuItem: FC<MenuItemProps> = ({label = 'Test', route = 'Test'}) => {
           resizeMode="contain"
           height={20}
           width={20}
-          style={{tintColor: 'white'}}
+          style={{tintColor: COLORS.third}}
         />
       </View>
       <View
@@ -44,8 +48,8 @@ const MenuItem: FC<MenuItemProps> = ({label = 'Test', route = 'Test'}) => {
         }}>
         <Text
           style={{
-            color: COLORS.black,
-            ...FONTS.body4,
+            color: COLORS.white,
+            ...FONTS.h3,
           }}>
           {label}
         </Text>

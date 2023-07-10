@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {COLORS, FONTS, SIZES} from '../../../constants';
 import {Button} from '@ant-design/react-native';
@@ -11,10 +11,11 @@ import {
 } from '../../../services/stores/sliceReducers/UserSlice';
 import {useNavigation} from '@react-navigation/native';
 import SplashComponent from '../../SplashComponent';
+import {styles} from '../../../styles/global';
 
 const HomeHeader = () => {
   const dispatch = useDispatch();
-  const {name, authorities} = useAppSelector((state: RootState) => state.users);
+  const {fullName, roles} = useAppSelector((state: RootState) => state.users);
   const navigation = useNavigation();
   const logoutHandle = () => {
     dispatch(setLoading(true));
@@ -33,6 +34,7 @@ const HomeHeader = () => {
         gap: 12,
         alignItems: 'center',
         paddingHorizontal: SIZES.base * 3,
+        // backgroundColor: COLORS.white,
       }}>
       <View
         style={{
@@ -40,6 +42,7 @@ const HomeHeader = () => {
           flexDirection: 'row',
           gap: 12,
           alignItems: 'center',
+          justifyContent: 'center',
         }}>
         {/* avatar  */}
         <View
@@ -47,11 +50,11 @@ const HomeHeader = () => {
             width: 60,
             height: 60,
             borderRadius: 30,
-            backgroundColor: COLORS.lightGray,
+            backgroundColor: COLORS.primary,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <IconOutline name="user" size={30} color="black" />
+          <IconOutline name="user" size={30} color={COLORS.white} />
         </View>
         {/* name  */}
         <View
@@ -70,7 +73,7 @@ const HomeHeader = () => {
                 fontSize: SIZES.body2,
                 fontWeight: 'bold',
               }}>
-              {name}
+              {fullName}
             </Text>
           </View>
           <View
@@ -83,50 +86,30 @@ const HomeHeader = () => {
                 color: COLORS.black,
                 fontSize: SIZES.body4,
               }}>
-              {authorities?.map(item => item.split('_')[1]).join(', ')}
+              {roles?.map(item => item.split('_')[1]).join(', ')}
             </Text>
           </View>
         </View>
       </View>
-      <Button
+
+      <TouchableOpacity
         onPress={logoutHandle}
-        style={{
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+        style={[
+          styles.button,
+          {
+            backgroundColor: COLORS.primary,
+            marginTop: 0,
+          },
+        ]}>
         <IconOutline
           name="logout"
           size={30}
-          color="black"
+          color={COLORS.white}
           onPress={logoutHandle}
         />
-        <View
-          style={{
-            alignItems: 'center',
-            marginTop: 5,
-          }}>
-          <Text
-            style={{
-              color: COLORS.black,
-            }}>
-            Đăng xuất
-          </Text>
-        </View>
-      </Button>
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default HomeHeader;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // borderBottomLeftRadius: 30,
-    // borderBottomRightRadius: 30,
-    padding: 20,
-    alignItems: 'center',
-    paddingTop: SIZES.padding * 2,
-  },
-});

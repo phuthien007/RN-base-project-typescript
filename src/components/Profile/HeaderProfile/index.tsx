@@ -5,9 +5,7 @@ import {COLORS, SIZES} from '../../../constants';
 import {useAppSelector} from '../../../services/stores';
 
 const HeaderProfile = () => {
-  const {authorities, email, name, partnerName} = useAppSelector(
-    state => state.users,
-  );
+  const {roles, fullName} = useAppSelector(state => state.users);
 
   return (
     <View
@@ -47,7 +45,7 @@ const HeaderProfile = () => {
               fontSize: SIZES.body2,
               fontWeight: 'bold',
             }}>
-            {name}
+            {fullName}
           </Text>
         </View>
         <View
@@ -60,7 +58,7 @@ const HeaderProfile = () => {
               color: 'white',
               fontSize: SIZES.body4,
             }}>
-            {authorities?.map(item => item.split('_')[1]).join(', ')}
+            {roles?.map(item => item.split('_')[1]).join(', ')}
           </Text>
         </View>
       </View>
